@@ -1,0 +1,31 @@
+Te deseo Exitos y a promocionar
+
+2doParcial_AcortandoElCamino\
+2doParcial_AtendiendoLaAmbulancia\
+2doParcial_CadenaDeCasaDeRegalos\
+2doParcial_CambioDeManosDeCalles\
+2doParcial_DepositosSubterraneos\
+2doParcial_InspeccionandoLaReserva\
+2doParcial_LetrasExtremas\
+2doParcial_Metro\
+2doParcial_MontañaComo\
+2doParcial_Otros\src\ar\edu\unlam\prograavanzada\grafos\problemas
+
+			acortandoelcamino\
+			arbol\
+			casaderegalos\
+			conexionesenred\
+			gusano\
+			invitadoscasamiento\
+			minotauro\
+			rescatandoprincesa\
+			vecinos\			CORREGIRLO
+			
+2doParcial_ReconstruyendoLaPelicula1\			FAIL
+2doParcial_ReconstruyendoLaPelicula2\			FAIL
+2doParcial_ReconstruyendoLaPelicula3\ 			Terminar OUT
+2doParcial_RedEmpresarial\
+2doParcial_RescatandoALaPrincesa\
+2doParcial_TrazasDeCobre\
+2doParcial_UsandoRedDeSubterraneos\
+2doParcial_VagonesDeTren\

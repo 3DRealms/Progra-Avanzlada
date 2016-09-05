@@ -1,0 +1,62 @@
+package pelicula.resolucion;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import pelicula.clasesmodelo.Grafo;
+import pelicula.clasesmodelo.Nodo;
+
+public class PeliculaRunner {
+
+	public static void main(String[] args) {
+
+		List<Dijsktra.ResultadoDijkstra> resultados = new ArrayList<Dijsktra.ResultadoDijkstra>();
+		
+		Grafo grafo = InterpreteSegmentos.leerYGenerarGrafoSegmentos("src\\inout\\pelicula.in"); 
+
+		List<Nodo> nodosOrigen = grafo.obtenerNodosOrigen();
+		Iterator<Nodo> iNodosOrigen = nodosOrigen.iterator();
+
+		// Corro dijktra para cada nodo origen y los guardo en listado
+		while(iNodosOrigen.hasNext()){
+			resultados.add( Dijsktra.analizarDistancias(grafo, iNodosOrigen.next()) );
+		}
+		
+		// De todos los resultados, obtengo aquel que sea el menor con respecto a nodos destino(pueden ser varios).
+		List<Nodo> nodosDestino = grafo.obtenerNodosDestino();
+		
+		
+		Iterator<Dijsktra.ResultadoDijkstra> iResultados = resultados.iterator();
+
+		List<Nodo> caminoMasCorto = null;
+		
+		while(iResultados.hasNext()){
+		
+			Dijsktra.ResultadoDijkstra resultado = iResultados.next();
+			
+			int costoAFinal = Integer.MAX_VALUE;
+			
+					
+			Iterator<Nodo> iDestinos = nodosDestino.iterator();
+			while (iDestinos.hasNext()){
+				
+				Nodo destinoIt = iDestinos.next();
+				int resultadoIt = resultado.getDistancias().get(destinoIt).intValue();
+				
+				if(resultadoIt < costoAFinal){
+					costoAFinal = resultadoIt;
+					caminoMasCorto = resultado.getCaminoCompleto(grafo, destinoIt);
+				}
+			}
+		}
+		
+		
+		
+		
+		System.out.println(caminoMasCorto);
+		
+		
+	}
+
+}

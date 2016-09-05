@@ -1,0 +1,38 @@
+T cm para cortar lo que cada escuela necesita
+I cm para cada escuela cada una con un numero diferente de cm
+
+los siguientes retazos se dan asi
+
+si fue de 17cm el proximo sera de 17+1+7
+osea a dividir decena centena y queda a+unidad+decena+centena
+
+
+recorre todas las escuelas, si queda carretel vuelve al principio
+
+saltea el caso de que no cumpla la condicion especial hasta que no cumpla con ninguna
+
+dado esto termina la secuencia
+
+Las escuelas quedan ientificadas con la secuencia de carga
+
+Luego se consideran desde el primero los subsiguientes retasos
+
+de estos coinciden por ejemplo 17 para dos y luego 25 y luego asi
+tendran 2 tamaños en comun
+
+
+
+Averiguar subsecuencia mayor en comun
+
+
+hasta 2 escueas que lo verifiquen
+
+las banderas mas grandes
+
+
+
+escuela_bandera_mas_larga longitud
+numero_de_costuras_bandera_mayor_retasos
+tamaño_sobrante_carretel
+mayor_largo_subsecuencia numero_escuela_comparada numero_escuela2_comparada
+
