@@ -27,10 +27,10 @@ public class Probador {
 	private int DY;				   // Coordenada en y del terreno
 	private int F;				   // Frente de la casa  <- la puerta se posiciona aca.
 	private int L; 		  		   // Profundidad de la casa 
-	private int cantPeñasco;	   // obvi nene
-	private boolean [][] terreno;  // MATRIZ BOOLEANA CON lOS PEÑASCOS:
-																   // TRUE   = HAY PEÑASCO
-																   // FASLSE = NO HAY PEÑASCO
+	private int cantPeÃ±asco;	   // obvi nene
+	private boolean [][] terreno;  // MATRIZ BOOLEANA CON lOS PEÃ‘ASCOS:
+																   // TRUE   = HAY PEÃ‘ASCO
+																   // FASLSE = NO HAY PEÃ‘ASCO
 
 	
 	//DATOS DEL .OUT
@@ -49,21 +49,21 @@ public class Probador {
 		DX = scIn.nextInt();  
 		DY = scIn.nextInt();
 		
-		terreno = new boolean[DX][DY]; // Matriz de peñascos	
+		terreno = new boolean[DX][DY]; // Matriz de peÃ±ascos	
 		
 		F = scIn.nextInt();  
 		L = scIn.nextInt();  
 		
 		
-		cantPeñasco = scIn.nextInt();
+		cantPeÃ±asco = scIn.nextInt();
 
-		for (int i = 0; i < cantPeñasco ; i++) {
+		for (int i = 0; i < cantPeÃ±asco ; i++) {
 			int tempFil = scIn.nextInt() - 1;		//  Bueno ya se sabe que una matriz
 			int tempCol = scIn.nextInt() - 1; 	//  empieza a contar desde 0. 
 		
 			//	System.out.println(tempFil + " " + " " + tempCol );
 		
-			terreno[tempFil][tempCol] = true; // Si hay peñasco es TRUE.
+			terreno[tempFil][tempCol] = true; // Si hay peÃ±asco es TRUE.
 		}
 
 		scIn.close();
@@ -100,10 +100,10 @@ public class Probador {
 			if(orientacion.equals("N") || orientacion.equals("S")){
 				
 				// aca compruebo que la  casa entre
-				for(int i = fCasa; i<(F+fCasa); i++){  //desde la fila minima hasta el fin del frente.
-					for(int j = cCasa; j<(L+cCasa); j++){ //desde la columna minima hasta el fin de la profundidad.
+				for(int i = fCasa; i<F; i++){  //desde la fila minima hasta el fin del frente.
+					for(int j = cCasa; j<L; j++){ //desde la columna minima hasta el fin de la profundidad.
 						if (terreno[i][j])
-							return false;  //Si en el terreno cuadrado de la casa hay un peñasco returno falso.
+							return false;  //Si en el terreno cuadrado de la casa hay un peÃ±asco returno falso.
 					}
 				}
 
@@ -112,10 +112,10 @@ public class Probador {
 			else if(orientacion.equals("E") || orientacion.equals("O")){
 
 				// aca compruebo que la  casa entre	
-				for(int i = fCasa; i<(F+fCasa); i++){  //desde la fila minima hasta el fin del frente.
-					for(int j = cCasa; j<(L+cCasa); j++){ //desde la columna minima hasta el fin de la profundidad.
+				for(int i = fCasa; i<F; i++){  //desde la fila minima hasta el fin del frente.
+					for(int j = cCasa; j<L; j++){ //desde la columna minima hasta el fin de la profundidad.
 						if (terreno[j][i])
-							return false;  //Si en el terreno cuadrado de la casa hay un peñasco returno falso.
+							return false;  //Si en el terreno cuadrado de la casa hay un peÃ±asco returno falso.
 					}
 				}
 
@@ -132,7 +132,7 @@ public class Probador {
 	
 	public static void main(String[] args) throws FileNotFoundException {
 	
-		String miPathOut = "C:\\Users\\laboratorios.UNLMLAB\\Desktop\\Workspace\\Peñasco1\\PreparacionDePrueba\\LotePrueba\\Salida Esperada\\01.out";
+		String miPathOut = "C:\\Users\\laboratorios.UNLMLAB\\Desktop\\Workspace\\PeÃ±asco1\\PreparacionDePrueba\\LotePrueba\\Salida Esperada\\01.out";
 		
 		Probador p = new Probador(new File( "C:\\Datos\\01.in"),new File(miPathOut));
 		
