@@ -8,8 +8,8 @@ import java.util.Scanner;
 
 public class VectorMath {
 	
-	int dim;
-	double [] vec;
+	private int dim;
+	private double [] vec;
 	
 	public VectorMath(int dim, double[] vec){
 		this.dim = dim;
@@ -91,6 +91,14 @@ public class VectorMath {
 		
 	}
 	
+	public VectorMath(VectorMath obj) {
+		this.dim = obj.dim;
+		this.vec = new double[dim];
+		for (int i = 0; i < this.dim; i++) {
+			this.vec[i] = obj.vec[i];
+		}
+	}
+
 	public VectorMath sumar(VectorMath vec) throws DistDimException{
 		if (dim != vec.dim){
 			throw new DistDimException(" Distinta Dimension ");
@@ -110,6 +118,23 @@ public class VectorMath {
 		VectorMath aux = new VectorMath(dim);
 		for (int i=0; i<dim; i++){
 			aux.vec[i]=this.vec[i]*num;
+			//System.out.println(aux.vec[i]);
+		}
+		return aux;
+	}
+	public VectorMath producto(MatrizMath matInput) throws DistDimException{
+
+		if (dim != matInput.getFil() ){
+			throw new DistDimException(" Distinta Dimension ");
+		}		
+
+		VectorMath aux = new VectorMath(matInput.getCol());
+		
+		for (int i=0; i<matInput.getCol(); i++){
+			aux.vec[i]=0;
+			for (int j=0; j<dim; j++){
+				aux.vec[i] += this.vec[i]*matInput.getPorCoor(j, i);
+			}
 			//System.out.println(aux.vec[i]);
 		}
 		return aux;
@@ -140,14 +165,14 @@ public class VectorMath {
 	}	
 	
 	public String toString(){
-		String retorno = "(";
+		String retorno = "( ";
 		for(int i = 0; i < vec.length; i++){
 			retorno += vec[i];
 			if(i < vec.length-1){
-				retorno +=",";
+				retorno +=", ";
 			}
 		}
-		retorno += ")";
+		retorno += " )";
 
 		return retorno;
 	}
@@ -156,10 +181,13 @@ public class VectorMath {
 		// TODO Auto-generated method stub
 		Locale.setDefault(new Locale("en", "Us"));
 		VectorMath vec1;
-		String miPath = "C:\\Datos\\vector.txt";
+		String miPath = "vector.txt";
+		MatrizMath mat1;
+		String miPath2 = "matriz.txt";
 		try {
 			vec1 = new VectorMath(new File(miPath));
-			VectorMath vecfinal = vec1.producto(3); 
+			mat1 = new MatrizMath(new File(miPath2));	
+			VectorMath vecfinal = vec1.producto(mat1); 
 			System.out.println(vecfinal);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -170,6 +198,18 @@ public class VectorMath {
 		}
 		
 
+	}
+
+	public int getDim() {
+		return dim;
+	}
+
+	public double getPorCoor(int coor) {
+		return vec[coor];
+	}
+	
+	public void setPorCoor(int coor, double value){
+		vec[coor] = value;
 	}
 
 }
