@@ -94,47 +94,44 @@ public class MatrizMath {
 		}
 	}
 
-	public VectorMath gaussJordan(VectorMath independiente){ //el vector independiente es el vector de terminos independiestes (osea del otro lado del = )
+	public VectorMath gaussJordan(VectorMath independiente){
 
-		VectorMath resultado = new VectorMath( independiente ); 	//Vector de resultados
-		VectorMath vectorAux = new VectorMath( independiente.getDim() );//Vector auxiliar para calculos
-		double pivote; 							// este lo voy a ysar aoara
-		double aux;
+		VectorMath resultado = new VectorMath( independiente );    // Vector de resultados :) 
 
-		for(int i = 0; i< this.getCol(); i++ ){
+		double pivote;     	// Pivote para hacer 1s.
+		double coeficiente;  	// Coeficiente para multiplicar la fila y restala para hacer 0s.
 
+		for(int i = 0; i< this.getCol(); i++ ){			
 
-			if ( this.mat[i][i] == 0 ){ 			//esta rancio todavia, osea se puede ir de rango.
-				this.intercambiarFilas( i , i+1 ); 	// Obviamente si es 0 no puedo dividir por eso cambio de filas.
+			if ( this.mat[i][i] == 0 ){ 			// Esta rancio todavia, osea se puede ir de rango.
+				this.intercambiarFilas( i , i+1 );      // pero intercabia piola es por si hay 0s.
 			}
 
-			pivote = this.mat[i][i];  //con este numero divido la fila asi tengo un 1 y puedo hacer 0.
+			pivote = this.mat[i][i];			// Asigno el pivote para dividir y hacer esa columna los 0s.
 
-			for(int k = 0; k<this.getCol();k++){ 			//matematicamente no hace falta modificar la fila que uso para hacer 0.
-				vectorAux.setPorCoor(k, this.mat[i][k] / pivote); // aca creo un 1  para hacer los 0 de esa columa
+
+			for(int k = 0; k<this.getCol();k++){ 		
+				this.mat[i][k] /= pivote;  		// Pero si hago gauss joran ya me queda el 1 :) 
 			}
+			resultado.setPorCoor(i, resultado.getPorCoor(i) / pivote ) ;
 
-			for(int j = 0; j<this.getFil();j++){
+			for(int j = 0; j<this.getFil();j++){	//Recorre las filas.
 
-				aux = this.mat[j][i]; // este aux es el coeficiente por cual multiplico la fila para restarla.
+				coeficiente = this.mat[j][i];  //multiplica este nº por la fila que tiene el 1.
 
 				if( j != i ){
-
-					for ( int k = 0; k < this.getCol(); k++){
-						this.mat[j][k] = this.mat[j][k] - aux* vectorAux.getPorCoor(k);
-					}
+					resultado.setPorCoor(j,( resultado.getPorCoor(j) - coeficiente*resultado.getPorCoor(i) ) );
 					
-			//		resultado.setPorCoor(j, resultado.getPorCoor(j) - aux* vectorAux.getPorCoor(j) ); Rancio pero triangula bien
-			//  		ejemplo en https://es.wikipedia.org/wiki/Eliminaci%C3%B3n_de_Gauss-Jordan
-			//      
-					
-					
+					for ( int k = 0; k < this.getCol(); k++){ 	// Recorre por columnas. 
+						this.mat[j][k] = this.mat[j][k] - coeficiente*this.mat[i][k]; // cosa loca :)
+					}    					
 				}
 			}
-
 		}
-		System.out.println(resultado);
-		System.out.println(this);
+
+		System.out.println(resultado);	// aca el resultado
+		System.out.println(this);	// aca la matriz identidad
+		// Ahora que lo pienso edite la matriz y la hice mierda, asi que voy a tener que usar un aux.
 		return resultado;
 	}
 
