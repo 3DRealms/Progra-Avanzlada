@@ -7,9 +7,9 @@ import java.util.Scanner;
 
 public class MatrizMath {
 
-	private int col;
-	private int fil;
-	private double [][] mat;
+	private int col;   			// Cantidad de columnas
+	private int fil;   			// Cantidad de filas
+	private double [][] mat;		// Matriz de double
 
 	public MatrizMath(File dirFile) throws FileNotFoundException {
 
@@ -76,9 +76,10 @@ public class MatrizMath {
 		return aux;
 	}	
 
-	public  void intercambiarFilas(int esta, int porEsta){
+	public  void intercambiarFilas(int esta, int porEsta){ //intercamiar filas ( ejemplo: f1 por f2)
 		VectorMath aux = new VectorMath(this.fil);
-		for( int i = 0; i< this.fil ; i++ ){
+		//El cambio Clasico
+		for( int i = 0; i< this.fil ; i++ ){ 
 			aux.setPorCoor(i, this.getPorCoor(esta, i));
 			this.mat[esta][i] = this.mat[porEsta][i];
 			this.mat[porEsta][i] = aux.getPorCoor(i);
@@ -93,29 +94,29 @@ public class MatrizMath {
 		}
 	}
 
-	public VectorMath gaussJordan(VectorMath independiente){
+	public VectorMath gaussJordan(VectorMath independiente){ //el vector independiente es el vector de terminos independiestes (osea del otro lado del = )
 
-		VectorMath resultado = new VectorMath( independiente ); 
-		VectorMath vectorAux = new VectorMath( independiente.getDim() );
-		double pivote;
+		VectorMath resultado = new VectorMath( independiente ); 	//Vector de resultados
+		VectorMath vectorAux = new VectorMath( independiente.getDim() );//Vector auxiliar para calculos
+		double pivote; 							// este lo voy a ysar aoara
 		double aux;
 
 		for(int i = 0; i< this.getCol(); i++ ){
 
 
 			if ( this.mat[i][i] == 0 ){ 			//esta rancio todavia, osea se puede ir de rango.
-				this.intercambiarFilas( i , i+1 ); 
+				this.intercambiarFilas( i , i+1 ); 	// Obviamente si es 0 no puedo dividir por eso cambio de filas.
 			}
 
-			pivote = this.mat[i][i];
+			pivote = this.mat[i][i];  //con este numero divido la fila asi tengo un 1 y puedo hacer 0.
 
-			for(int k = 0; k<this.getCol();k++){ // matematica mente no hace falta modificar la matriz.
-				vectorAux.setPorCoor(k, this.mat[i][k] / pivote);
+			for(int k = 0; k<this.getCol();k++){ 			//matematicamente no hace falta modificar la fila que uso para hacer 0.
+				vectorAux.setPorCoor(k, this.mat[i][k] / pivote); // aca creo un 1  para hacer los 0 de esa columa
 			}
 
 			for(int j = 0; j<this.getFil();j++){
 
-				aux = this.mat[j][i];
+				aux = this.mat[j][i]; // este aux es el coeficiente por cual multiplico la fila para restarla.
 
 				if( j != i ){
 
@@ -124,7 +125,7 @@ public class MatrizMath {
 					}
 					
 			//		resultado.setPorCoor(j, resultado.getPorCoor(j) - aux* vectorAux.getPorCoor(j) ); Rancio pero triangula bien
-			//  	ejemplo en https://es.wikipedia.org/wiki/Eliminaci%C3%B3n_de_Gauss-Jordan
+			//  		ejemplo en https://es.wikipedia.org/wiki/Eliminaci%C3%B3n_de_Gauss-Jordan
 			//      
 					
 					
