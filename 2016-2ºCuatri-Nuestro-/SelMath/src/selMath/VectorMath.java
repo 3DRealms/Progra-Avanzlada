@@ -91,6 +91,21 @@ public class VectorMath {
 		
 	}
 	
+	public VectorMath(Scanner sc, int dim) throws FileNotFoundException {
+		
+
+		this.dim = dim;
+		vec = new double[dim]; // vector para almacenar la lectura
+		
+		for (int i = 0; i < vec.length ; i++) {
+			vec[i] =sc.nextDouble() ;
+			//System.out.println( vec[i]);
+		}
+		
+		
+		
+	}
+	
 	public VectorMath(VectorMath obj) {
 		this.dim = obj.dim;
 		this.vec = new double[dim];
@@ -177,28 +192,7 @@ public class VectorMath {
 		return retorno;
 	}
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Locale.setDefault(new Locale("en", "Us"));
-		VectorMath vec1;
-		String miPath = "vector.txt";
-		MatrizMath mat1;
-		String miPath2 = "matriz.txt";
-		try {
-			vec1 = new VectorMath(new File(miPath));
-			mat1 = new MatrizMath(new File(miPath2));	
-			VectorMath vecfinal = vec1.producto(mat1); 
-			System.out.println(vecfinal);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			System.out.println("El archivo esta rancio!");
-		} catch (DistDimException e){
-			e.printStackTrace();
-		}
-		
 
-	}
 
 	public int getDim() {
 		return dim;

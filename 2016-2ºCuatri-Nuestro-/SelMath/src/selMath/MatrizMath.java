@@ -30,6 +30,25 @@ public class MatrizMath {
 		sc.close();
 
 	}
+	
+	public MatrizMath(Scanner sc, int dim) throws FileNotFoundException {
+
+
+		fil = dim;
+		col = dim;
+
+		mat = new double[fil][col]; // vector para almacenar la lectura
+
+		for (int i = 0; i < fil*col ; i++) {
+			int tempFil = sc.nextInt();
+			int tempCol = sc.nextInt();
+
+			mat[tempFil][tempCol] =sc.nextDouble() ;
+			//System.out.println( mat[tempFil][tempCol]);
+		}
+
+
+	}
 
 	public MatrizMath(int fil,int col){
 		this.fil = fil;
@@ -85,6 +104,7 @@ public class MatrizMath {
 			this.mat[porEsta][i] = aux.getPorCoor(i);
 		}
 	}
+	
 	public  void intercambiarColumna(int esta, int porEsta){
 		VectorMath aux = new VectorMath(this.fil);
 		for( int i = 0; i< this.fil ; i++ ){
@@ -93,7 +113,7 @@ public class MatrizMath {
 			this.mat[i][porEsta] = aux.getPorCoor(i);
 		}
 	}
-
+/*
 	public VectorMath gaussJordan(VectorMath independiente){
 		VectorMath resultado = new VectorMath( independiente );         	// Vector de resultados :) 
 		double pivote;     													// Pivote para hacer 1s.
@@ -130,7 +150,7 @@ public class MatrizMath {
 	}
 
 
-
+*/
 
 	public MatrizMath producto(MatrizMath matInput) throws DistDimException{
 
@@ -151,6 +171,8 @@ public class MatrizMath {
 		}
 		return aux;
 	}
+	
+	
 	public VectorMath producto(VectorMath vecInput) throws DistDimException{
 
 		if (vecInput.getDim() != col ) {
@@ -170,6 +192,8 @@ public class MatrizMath {
 		return aux;
 	}
 
+	// Super Rancio, revisar!
+	
 	public double determinate() throws DistDimException{
 
 		if (fil != col ) {
@@ -200,13 +224,13 @@ public class MatrizMath {
 
 		return mat[k][k]*mat[k+1][k+1]-mat[k][k+1]*mat[k+1][k];
 	}
-
+/*
 	public static void main(String[] args) {
 		Locale.setDefault(new Locale("en", "Us"));
 		VectorMath vec1;
 		String vectorTXT = "3.txt";
 		MatrizMath mat1;
-		String matrizTXT = "03.txt";
+		String matrizTXT = "03.txt";/*
 		try {
 
 			vec1 = new VectorMath(new File(vectorTXT));
@@ -226,7 +250,7 @@ public class MatrizMath {
 		} catch (DistDimException e){
 			e.printStackTrace();
 		}
-	}
+	}*/
 
 	public int getCol() {
 		return col;
@@ -244,6 +268,12 @@ public class MatrizMath {
 		if (fil > this.fil || col > this.col )
 			throw new DistDimException("Dimension Erronea");
 		return mat [fil][col];
+	}
+	
+	public void setPorCoor(int fil, int col, double value) {
+		if (fil > this.fil || col > this.col )
+			throw new DistDimException("Dimension Erronea");
+		mat [fil][col] = value;
 	}
 
 }
