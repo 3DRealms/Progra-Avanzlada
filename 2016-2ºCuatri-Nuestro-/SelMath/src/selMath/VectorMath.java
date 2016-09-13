@@ -191,6 +191,7 @@ public class VectorMath {
 
 		return retorno;
 	}
+	
 
 
 

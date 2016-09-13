@@ -31,6 +31,11 @@ public class MatrizMath {
 
 	}
 	
+	public MatrizMath clone(){
+		return new MatrizMath(this.fil, this.col, this.mat);
+		
+	}
+	
 	public MatrizMath(Scanner sc, int dim) throws FileNotFoundException {
 
 
@@ -55,6 +60,17 @@ public class MatrizMath {
 		this.col = col;
 		this.mat = new double[fil][col];
 
+	}
+
+	public MatrizMath(int fil2, int col2, double[][] mat2) {
+		this.fil = fil2;
+		this.col = col2;
+		this.mat = new double[fil2][col2];
+		for (int i = 0; i < fil ; i++) {
+			for (int j = 0; j < col ; j++)
+				this.mat[i][j] = mat2[i][j];
+			//System.out.println( vec[i]);
+		}
 	}
 
 	public String toString(){
