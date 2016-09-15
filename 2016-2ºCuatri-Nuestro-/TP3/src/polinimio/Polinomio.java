@@ -55,7 +55,7 @@ public class Polinomio {
 			for( int j = i; j <this.getGrado() ; j++){
 				aux *= x;
 			}
-		//	System.out.println("Sucesiva: "+x+"^"+(this.getGrado()-i)+" = "+aux);
+			System.out.println("Sucesiva: "+x+"^"+(this.getGrado()-i)+" = "+aux);
 			resultado += this.getCoorCoeficiente( i )*aux;
 		}
 		resultado += this.getCoorCoeficiente( this.getGrado() );
@@ -66,21 +66,43 @@ public class Polinomio {
 	public double evaluarRecursiva(double x ) { 
 		double resultado = 0;
 		double aux;
-		
+
 		for( int i = 0; i < this.getGrado() ; i++ )
 		{
 			aux = potencia( x,this.getGrado()-i);
-		//	System.out.println("Recursiva"+x+"^"+(this.getGrado()-i)+" = "+aux);
+			//	System.out.println("Recursiva"+x+"^"+(this.getGrado()-i)+" = "+aux);
 			resultado += this.getCoorCoeficiente( i )*aux;
 		}
-		
+
 		resultado += this.getCoorCoeficiente( this.getGrado() );
 		return resultado;
 	}
-	
+
 	//Considerando exponente par o inpar
 	public double evaluarRecursivaPar(double x ) {
 		double resultado = 0;
+		double aux;
+
+		for( int i = 0; i < this.getGrado() ; i++ ){
+			
+			
+			
+			///NO ESTOY SEGURO A LO QUE SE REFIERE CON LO DE PAR e IMPAR. 
+			if( ( this.getGrado() - i % 2 ) == 0 ){
+				aux = potencia( x*x , this.getGrado() / 2 );
+			}
+			else{
+				aux = x*potencia( x , this.getGrado()-i) ;
+			}
+
+			aux = potencia( x,this.getGrado()-i);
+			//	System.out.println("Recursiva PAR"+x+"^"+(this.getGrado()-i)+" = "+aux);
+			resultado += this.getCoorCoeficiente( i )*aux;
+	
+		
+		}
+
+		resultado += this.getCoorCoeficiente( this.getGrado() );
 		return resultado;
 	}
 
@@ -98,7 +120,7 @@ public class Polinomio {
 		double resultado = 0;
 		for( int i = 0; i < this.getGrado() ; i++ )
 		{
-		//	System.out.println("Math.Pow: "+x+"^"+(this.getGrado()-i)+" = " + Math.pow(x,(this.getGrado()-i)) );
+			//	System.out.println("Math.Pow: "+x+"^"+(this.getGrado()-i)+" = " + Math.pow(x,(this.getGrado()-i)) );
 			resultado += this.getCoorCoeficiente( i ) * Math.pow(x, (this.getGrado()-i) );
 		}
 		resultado += this.getCoorCoeficiente( this.getGrado() );

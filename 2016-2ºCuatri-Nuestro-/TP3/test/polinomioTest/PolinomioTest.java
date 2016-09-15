@@ -14,7 +14,7 @@ public class PolinomioTest {
 	double[] c2 = {2,0,5,-3}; // grado 4.
 	Polinomio p2 = new Polinomio( c2 , c2.length - 1 ); //2*2³+0*2²+5*2-3
 	
-	double[] c3 = {2,3,4,-5,1,2,-8,12,3,2,0,4,-13}; //  grado 12.
+	double[] c3 = {2,3,4,-5,1,2,-8,12,3,2,0,4,-13}; //  Grado 12.
 	Polinomio p3 = new Polinomio( c3 , c3.length - 1 ); //2*2^12+3*2^11+4*2^10-5*2^9+1*2^8+2*2^7-8*2^6+12*2^5+3*2^4+2*2³+0*2²+4*2-13
 	
 	@Test
