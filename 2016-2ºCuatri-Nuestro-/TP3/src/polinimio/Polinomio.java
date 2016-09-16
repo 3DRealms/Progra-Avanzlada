@@ -81,6 +81,27 @@ public class Polinomio {
 	//Considerando exponente par o inpar
 	public double evaluarRecursivaPar(double x ) {
 		double resultado = 0;
+		double aux;
+		int n;
+		for( int i = 0; i < this.getGrado() ; i++ )
+		{	
+			n = this.getGrado() -i ;
+			
+			if( ( (n) % 2) != 0) //si es impar 
+			{
+				aux = potencia( x, n );
+				
+			}
+			else // si es par.
+			{
+				aux = potencia( x*x,( n )/2);
+
+			}
+		//	System.out.println("Recursiva"+x+"^"+(this.getGrado()-i)+" = "+aux);
+			resultado += this.getCoorCoeficiente( i )*aux;
+		}
+		
+		resultado += this.getCoorCoeficiente( this.getGrado() );
 		return resultado;
 	}
 
