@@ -46,103 +46,101 @@ public class Polinomio {
 	}
 
 
+	// style c.
 	public double evaluarMSucesivas(double x ){
 		double resultado = 0;
-		double aux;
+		double potencia;
 		for( int i = 0; i < this.getGrado() ; i++ )
 		{
-			aux = 1;
+			potencia = 1;
 			for( int j = i; j <this.getGrado() ; j++){
-				aux *= x;
+				potencia *= x;
 			}
-			System.out.println("Sucesiva: "+x+"^"+(this.getGrado()-i)+" = "+aux);
-			resultado += this.getCoorCoeficiente( i )*aux;
+			//	System.out.println("Sucesiva: "+x+"^"+(this.getGrado()-i)+" = "+aux);
+			resultado += this.getCoorCoeficiente( i )*potencia;
 		}
 		resultado += this.getCoorCoeficiente( this.getGrado() );
 		return resultado;
 	}
 
-	//Sin considerar exponente par	
+	// Potencia recursiva, re poco otimo stack feo :c
 	public double evaluarRecursiva(double x ) { 
 		double resultado = 0;
-		double aux;
+		double potencia;
 
 		for( int i = 0; i < this.getGrado() ; i++ )
 		{
-			aux = potencia( x,this.getGrado()-i);
+			potencia = potencia( x,this.getGrado()-i);
 			//	System.out.println("Recursiva"+x+"^"+(this.getGrado()-i)+" = "+aux);
-			resultado += this.getCoorCoeficiente( i )*aux;
+			resultado += this.getCoorCoeficiente( i )*potencia;
 		}
 
 		resultado += this.getCoorCoeficiente( this.getGrado() );
 		return resultado;
 	}
 
-	//Considerando exponente par o inpar
+	// Considerando exponente par o inpar (caso optimizado del anterior).
 	public double evaluarRecursivaPar(double x ) {
 		double resultado = 0;
-		double aux;
-<<<<<<< HEAD
-
-		for( int i = 0; i < this.getGrado() ; i++ ){
-			
-			
-			
-			///NO ESTOY SEGURO A LO QUE SE REFIERE CON LO DE PAR e IMPAR. 
-			if( ( this.getGrado() - i % 2 ) == 0 ){
-				aux = potencia( x*x , this.getGrado() / 2 );
-			}
-			else{
-				aux = x*potencia( x , this.getGrado()-i) ;
-			}
-
-			aux = potencia( x,this.getGrado()-i);
-			//	System.out.println("Recursiva PAR"+x+"^"+(this.getGrado()-i)+" = "+aux);
-			resultado += this.getCoorCoeficiente( i )*aux;
-	
-		
-		}
-
-=======
+		double potencia;
 		int n;
 		for( int i = 0; i < this.getGrado() ; i++ )
 		{	
-			n = this.getGrado() -i ;
-			
-			if( ( (n) % 2) != 0) //si es impar 
-			{
-				aux = potencia( x, n );
-				
-			}
-			else // si es par.
-			{
-				aux = potencia( x*x,( n )/2);
+			n = this.getGrado() - i ;
 
-			}
-		//	System.out.println("Recursiva"+x+"^"+(this.getGrado()-i)+" = "+aux);
-			resultado += this.getCoorCoeficiente( i )*aux;
+			if( ( (n) % 2) != 0) 		//si es impar 
+				potencia = potencia( x, n );
+			else 						// si es par.
+				potencia = potencia( x*x,( n )/2);
+			
+			//	System.out.println("Recursiva"+x+"^"+(this.getGrado()-i)+" = "+aux);
+			resultado += this.getCoorCoeficiente( i )*potencia;
 		}
-		
->>>>>>> 62f0ae74a59ff8bc0afa8ef60ea302c3c2883c64
+
 		resultado += this.getCoorCoeficiente( this.getGrado() );
 		return resultado;
 	}
-
+	
+	// La programacion Dinamica consiste en reutilizar lo ya calculado. 
+	// al estilo optimo matematico Dani 3.0.
 	public double evaluarProgDinamica(double x ) {
 		double resultado = 0;
+		double potencia = 1; // este es el x elevado a la potencia, en la primera es 1 porque x^0 = 1;
+		
+		for( int i = this.getGrado(); i >= 0  ; i-- )
+		{	
+			resultado += this.getCoorCoeficiente( i )*potencia;
+			potencia *= x; // Aca incremento el exponente en 1.
+		}
 		return resultado;
 	}
 
+	// FALTA MEJORAR, creo que deberia ser igual que la que hice antes pero que tarde menos,
+	// la cosa que no me doy cuenta que puedo optimizar sin cambiar el algoritmo.
 	public double evaluarMejorada(double x ) {
 		double resultado = 0;
+		double potencia;
+		for( int i = 0; i < this.getGrado() ; i++ )
+		{
+			potencia = 1;
+			for( int j = i; j <this.getGrado() ; j++){
+				potencia *= x;
+			}
+			//System.out.println("SucesivaMejorada: "+x+"^"+(this.getGrado()-i)+" = "+aux);
+			resultado += this.getCoorCoeficiente( i )*potencia;
+		}
+		resultado += this.getCoorCoeficiente( this.getGrado() );
 		return resultado;
 	}
-
+	
+	
+	
+	// Al estilo java, poco optimo orible (sin h).
 	public double evaluarPow (double x ) {
 		double resultado = 0;
 		for( int i = 0; i < this.getGrado() ; i++ )
 		{
-			//	System.out.println("Math.Pow: "+x+"^"+(this.getGrado()-i)+" = " + Math.pow(x,(this.getGrado()-i)) );
+			//System.out.println("Math.Pow: "+x+"^"+(this.getGrado()-i)+" = " + Math.pow(x,(this.getGrado()-i)) );
 			resultado += this.getCoorCoeficiente( i ) * Math.pow(x, (this.getGrado()-i) );
 		}
 		resultado += this.getCoorCoeficiente( this.getGrado() );

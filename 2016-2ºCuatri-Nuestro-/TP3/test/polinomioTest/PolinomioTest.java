@@ -50,7 +50,7 @@ public class PolinomioTest {
 		Assert.assertEquals( 671061377831.0 , p3.evaluarRecursiva(9) ); // p2(9) = 1500
 		
 	}
-/*
+
   	@Test
 	public void polinomioEvaluarRecursivaPar(){	
 
@@ -66,6 +66,7 @@ public class PolinomioTest {
 		Assert.assertEquals( 16315.0, p3.evaluarRecursivaPar(2) ); // p2(2) = 23
 		Assert.assertEquals( 671061377831.0 , p3.evaluarRecursivaPar(9) ); // p2(9) = 1500
 	}
+  
   	@Test
 	public void polinomioEvaluarProgDinamica(){	
 
@@ -81,22 +82,23 @@ public class PolinomioTest {
 		Assert.assertEquals( 16315.0, p3.evaluarProgDinamica(2) ); // p2(2) = 23
 		Assert.assertEquals( 671061377831.0 , p3.evaluarProgDinamica(9) ); // p2(9) = 1500
 	}
-  	@Test
-	public void polinomioEvaluarMejorada(){	
-	
-		///Polinomio 1///
-		Assert.assertEquals( 23.0  , p1.evaluarMejorada(2) );	//p1(2) = 23
-		Assert.assertEquals( 345.0 , p1.evaluarMejorada(9) );	//p1(9) = 345
+//	
+//  	@Test
+//	public void polinomioEvaluarMejorada(){	
+//	
+//		///Polinomio 1///
+//		Assert.assertEquals( 23.0  , p1.evaluarMejorada(2) );	//p1(2) = 23
+//		Assert.assertEquals( 345.0 , p1.evaluarMejorada(9) );	//p1(9) = 345
+//
+//		///Polinomio 2///
+//		Assert.assertEquals( 23.0   , p2.evaluarMejorada(2) ); // p2(2) = 23
+//		Assert.assertEquals( 1500.0 , p2.evaluarMejorada(9) ); // p2(9) = 1500
+//		
+//		///Polinomio 3///
+//		Assert.assertEquals( 16315.0, p3.evaluarMejorada(2) ); // p2(2) = 23
+//		Assert.assertEquals( 671061377831.0 , p3.evaluarMejorada(9) ); // p2(9) = 1500
+//	}
 
-		///Polinomio 2///
-		Assert.assertEquals( 23.0   , p2.evaluarMejorada(2) ); // p2(2) = 23
-		Assert.assertEquals( 1500.0 , p2.evaluarMejorada(9) ); // p2(9) = 1500
-		
-		///Polinomio 3///
-		Assert.assertEquals( 16315.0, p3.evaluarMejorada(2) ); // p2(2) = 23
-		Assert.assertEquals( 671061377831.0 , p3.evaluarMejorada(9) ); // p2(9) = 1500
-	}
-*/
 	@Test
 	public void polinomioEvaluarPow(){	
 		
