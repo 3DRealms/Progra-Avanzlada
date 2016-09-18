@@ -1,10 +1,10 @@
 package juego;
 
 public class Humano extends Personaje {
-	
+
 	@Override
 	protected int calcularPuntosDeAtaque() {
-		return 10;
+		return 10 + (100-energia);
 	}
 
 	@Override

@@ -1,0 +1,29 @@
+package juego;
+
+import java.util.LinkedList;
+
+public class BatallonHumano extends Batallon {
+
+	public BatallonHumano(int cant) {
+		super(cant);
+		batallon =  new LinkedList<Personaje>();
+
+		for (int i = 0; i < cant; i++) {	
+			batallon.add(new Humano());
+		}
+	}
+
+	public void atacar(Batallon victimas){
+		int i = 0;
+		Personaje orco;
+		for (Personaje humano: this.batallon) {
+			if( victimas.cantidad > i )
+				i=0;
+			orco = victimas.batallon.get(i);
+			humano.atacar( orco );
+			i++;
+		}
+	}
+
+
+}

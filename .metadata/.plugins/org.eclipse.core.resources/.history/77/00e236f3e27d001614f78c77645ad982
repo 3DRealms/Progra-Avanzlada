@@ -1,0 +1,16 @@
+package juegoTest;
+import org.junit.Test;
+
+import juego.Batallon;
+import juego.BatallonHumano;
+import junit.framework.Assert;
+
+
+public class BatallonTest {
+	@Test
+	public void batallaGanaHumano(){
+		Batallon bHumano = new BatallonHumano(15);
+		Batallon bOrco = new BatallonHumano(10);
+		
+	}
+}

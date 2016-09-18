@@ -1,0 +1,11 @@
+package juegoTest;
+import org.junit.Test;
+import junit.framework.Assert;
+
+
+public class BatallonTest {
+	@Test
+	public void polinomioEvaluarSucesivas(){
+	
+	}
+}
