@@ -1,0 +1,11 @@
+package juego;
+
+public class BatallonOrco extends Batallon {
+
+	public BatallonOrco(int cant) {
+		super(cant);
+		for (int i = 0; i < cant; i++) {
+			batallon.add(new Humano());
+		}	}
+
+}

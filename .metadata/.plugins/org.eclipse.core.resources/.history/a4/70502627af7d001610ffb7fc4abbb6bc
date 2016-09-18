@@ -1,0 +1,6 @@
+package juego;
+
+public class NPC implements Atacable {
+	protected int energia = 100;
+	protected int salud = 100;
+}

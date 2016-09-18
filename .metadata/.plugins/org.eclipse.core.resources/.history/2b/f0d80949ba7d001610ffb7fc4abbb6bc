@@ -1,0 +1,10 @@
+package juego;
+
+public class BatallonOrco extends Batallon {
+
+	public BatallonOrco(int cant) {
+		super(cant);
+		// TODO Auto-generated constructor stub
+	}
+
+}

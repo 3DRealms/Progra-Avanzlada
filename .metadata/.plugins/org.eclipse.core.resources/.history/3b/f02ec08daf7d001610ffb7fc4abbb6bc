@@ -1,0 +1,14 @@
+package juego;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public abstract class Batallon {
+		int cantidad;
+		List<Personaje> batallon;
+		
+		public Batallon(int cant){
+			escuadron = new LinkedList<Personaje>();
+			
+		}
+}

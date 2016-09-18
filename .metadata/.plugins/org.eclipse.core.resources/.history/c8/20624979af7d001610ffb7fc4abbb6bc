@@ -1,0 +1,6 @@
+package juego;
+
+public abstract class Batallon {
+		int cantidad;
+		List<Personaje> batallon;
+}

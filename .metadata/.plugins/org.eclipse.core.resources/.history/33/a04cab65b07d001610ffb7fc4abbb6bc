@@ -1,0 +1,13 @@
+package juego;
+
+import java.util.LinkedList;
+
+public class BatallonHumano extends Batallon {
+
+	public BatallonHumano(int cant) {
+		super(cant);
+	}
+
+
+
+}
