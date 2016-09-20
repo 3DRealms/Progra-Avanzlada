@@ -16,19 +16,20 @@ public class BatallonTest {
 		String ganador = "";
 		boolean fin = false;
 		System.out.println("¡Empieza la batalla!");
+		
 		while( !fin ){
 			System.out.println("Round "+i);
 			
 			b_Humano.atacar(b_Orco);
 			b_Orco.atacar(b_Humano);
 			
-			if( b_Humano.isEmpty()   ){
+			if( b_Humano.isEmpty() ){
 				fin = true;
-				ganador = "Alianza";
+				ganador = "ORDA";
 			}
 			if( b_Orco.isEmpty() ){
 				fin = true;
-				ganador = "HORDA";
+				ganador = "ALIANZA";
 			}
 			i++;
 		}
