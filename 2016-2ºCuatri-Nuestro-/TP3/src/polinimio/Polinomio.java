@@ -115,21 +115,16 @@ public class Polinomio {
 		return resultado;
 	}
 
-	// FALTA MEJORAR, creo que deberia ser igual que la que hice antes pero que tarde menos,
-	// la cosa que no me doy cuenta que puedo optimizar sin cambiar el algoritmo.
+	//Mejorada de la programacion dinamica n-1
 	public double evaluarMejorada(double x ) {
-		double resultado = 0;
-		double potencia;
-		for( int i = 0; i < this.getGrado() ; i++ )
-		{
-			potencia = 1;
-			for( int j = i; j <this.getGrado() ; j++){
-				potencia *= x;
-			}
-			//System.out.println("SucesivaMejorada: "+x+"^"+(this.getGrado()-i)+" = "+aux);
+		double resultado = this.getCoorCoeficiente(0);
+		double potencia = 1; // este es el x elevado a la potencia, en la primera es 1 porque x^0 = 1;
+		
+		for( int i = this.getGrado(); i >= 1  ; i-- )
+		{	
 			resultado += this.getCoorCoeficiente( i )*potencia;
+			potencia *= x; // Aca incremento el exponente en 1.
 		}
-		resultado += this.getCoorCoeficiente( this.getGrado() );
 		return resultado;
 	}
 	
