@@ -4,7 +4,9 @@ public abstract class Personaje implements Atacable {
 
 	protected int energia = 100;
 	protected int salud = 100;
-
+	protected int ataque = 1;
+	protected int defensa = 0;
+	
 	public final void atacar(Atacable atacado) {
 		if (puedeAtacar()) {
 			int puntosDeAtaque = calcularPuntosDeAtaque();
@@ -18,11 +20,12 @@ public abstract class Personaje implements Atacable {
 
 	protected abstract boolean puedeAtacar();
 	protected abstract int calcularPuntosDeAtaque();
-
+	public abstract int obtenerPuntosDeAtaque();
+	public abstract int obtenerPuntosDeDefensa();
+	
 	public void serAtacado(int danio) {
 		this.salud -= danio;
 	}
-
 	public void serCurado() {
 		this.salud = 100;
 	}
@@ -34,9 +37,9 @@ public abstract class Personaje implements Atacable {
 	public void morir() {
 
 	}
-
 	public boolean estaMuerto() {
 		return salud <= 0;
 	}
 
+	
 }
