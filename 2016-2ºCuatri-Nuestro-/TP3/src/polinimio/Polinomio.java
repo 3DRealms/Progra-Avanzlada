@@ -44,6 +44,16 @@ public class Polinomio {
 		}
 		return 	x*potencia(x,grado-1);			
 	}
+		public double potenciaPar(double x, int grado ){
+		if( grado == 0)
+		{
+			return 1;
+		}
+		if( ( (n) % 2) != 0) 		//si es impar 
+			return  potenciaPar( x, n );
+							// si es par.
+		return  potenciaPar( x*x,( n )/2);
+	}
 
 
 	// style c.
@@ -88,10 +98,7 @@ public class Polinomio {
 		{	
 			n = this.getGrado() - i ;
 
-			if( ( (n) % 2) != 0) 		//si es impar 
-				potencia = potencia( x, n );
-			else 						// si es par.
-				potencia = potencia( x*x,( n )/2);
+			potencia = potenciaPar(x);
 			
 			//	System.out.println("Recursiva"+x+"^"+(this.getGrado()-i)+" = "+aux);
 			resultado += this.getCoorCoeficiente( i )*potencia;
