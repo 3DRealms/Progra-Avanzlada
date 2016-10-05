@@ -1,0 +1,382 @@
+package polinomioTest;
+
+import java.io.FileNotFoundException;
+
+import org.junit.Assert;
+import org.junit.Test;
+import java.util.GregorianCalendar;
+import java.util.Calendar;
+import polinomio.Polinomio;
+
+
+public class PolinomioTest {
+	
+
+	@Test
+	public void pruebaPolinomioGrado4mSucesivas2() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado4.in");
+		Assert.assertTrue( 7.7392 == p.evaluarMSucesivas(0.9));
+	}
+	@Test
+	public void pruebaPolinomioGrado4mSucesivas09() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado4.in");
+		Assert.assertTrue( 7.7392 == p.evaluarMSucesivas(0.9));
+	}
+	
+	@Test
+	public void pruebaPolinomioGrado4Recursiva2() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado4.in");
+		Assert.assertTrue(73.0 == p.evaluarRecursiva(2));
+	}
+	@Test
+	public void pruebaPolinomioGrado4Recursiva09() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado4.in");
+		Assert.assertTrue( 7.7392 == p.evaluarRecursiva(0.9));
+	}
+	
+	@Test
+	public void pruebaPolinomioGrado4RecursivaPar2() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado4.in");
+		Assert.assertTrue(73.0 == p.evaluarRecursivaPar(2));
+	}
+	@Test
+	public void pruebaPolinomioGrado4RecursivaPar09() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado4.in");
+		Assert.assertTrue( 7.7392 == p.evaluarRecursivaPar(0.9));
+	}
+	
+	@Test
+	public void pruebaPolinomioGrado4ProgDinamica2() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado4.in");
+		Assert.assertTrue(73.0 == p.evaluarProgDinamica(2));
+	}
+	@Test
+	public void pruebaPolinomioGrado4ProgDinamica09() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado4.in");
+		Assert.assertTrue( 7.7392 == p.evaluarProgDinamica(0.9));
+	}
+	@Test
+	public void pruebaPolinomioGrado4Pow() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado4.in");
+		Assert.assertTrue( 7.7392 == p.evaluarPow(0.9));
+	}
+	@Test
+	public void pruebaPolinomioGrado4Mejorada2() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado4.in");
+		Assert.assertTrue(73.0 == p.evaluarMejorada(2));
+	}
+	@Test
+	public void pruebaPolinomioGrado4Mejorada09() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado4.in");
+		Assert.assertTrue( 7.7392 == p.evaluarMejorada(0.9));
+	}
+	
+	@Test
+	public void pruebaPolinomioGrado4Horner2() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado4.in");
+		Assert.assertTrue(73.0 == p.evaluarHorner(2));
+	}
+	
+	@Test
+	public void pruebaPolinomioGrado4Horner09() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado4.in");
+		Assert.assertTrue( 7.7392 == p.evaluarHorner(0.9));
+	}
+	
+	@Test
+	public void pruebaPolinomioGrado10mSucesivas1() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado10.in");
+		Assert.assertTrue(4.0 == p.evaluarMSucesivas(1));
+	}
+	@Test
+	public void pruebaPolinomioGrado10mSucesivas2() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado10.in");
+		Assert.assertTrue(2050 == p.evaluarMSucesivas(2));
+	}
+	@Test
+	public void pruebaPolinomioGrado10mSucesivas4() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado10.in");
+		Assert.assertTrue(2050 == p.evaluarMSucesivas(2));
+	}
+	@Test
+	public void pruebaPolinomioGrado10Recursiva1() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado10.in");
+		
+		Assert.assertTrue(4.0 == p.evaluarRecursiva(1));
+	}
+	@Test
+	public void pruebaPolinomioGrado10Recursiva2() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado10.in");
+		
+		Assert.assertTrue(2050 == p.evaluarRecursiva(2));
+	}
+	@Test
+	public void pruebaPolinomioGrado10Recursiva4() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado10.in");
+		Assert.assertTrue(2097154.0 == p.evaluarRecursiva(4));
+	}
+	
+	@Test
+	public void pruebaPolinomioGrado10RecursivaPar1() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado10.in");
+		Assert.assertTrue(4.0 == p.evaluarRecursivaPar(1));
+	}
+	@Test
+	public void pruebaPolinomioGrado10RecursivaPar2() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado10.in");
+		Assert.assertTrue(2050 == p.evaluarRecursivaPar(2));
+	}
+	@Test
+	public void pruebaPolinomioGrado10RecursivaPar4() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado10.in");
+		Assert.assertTrue(2097154.0 == p.evaluarRecursivaPar(4));
+	}
+	@Test
+	public void pruebaPolinomioGrado10Mejorada1() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado10.in");
+		Assert.assertTrue(4.0 == p.evaluarMejorada(1));
+	}
+	@Test
+	public void pruebaPolinomioGrado10Mejorada2() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado10.in");
+		Assert.assertTrue(2050 == p.evaluarMejorada(2));
+	}
+	@Test
+	public void pruebaPolinomioGrado10Mejorada4() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado10.in");
+		Assert.assertTrue(2097154.0 == p.evaluarMejorada(4));
+	}
+	@Test
+	public void pruebaPolinomioGrado10ProgDinamica1() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado10.in");
+		Assert.assertTrue(4.0 == p.evaluarProgDinamica(1));
+	}
+	@Test
+	public void pruebaPolinomioGrado10ProgDinamica2() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado10.in");
+		Assert.assertTrue(2050 == p.evaluarProgDinamica(2));
+	}
+	@Test
+	public void pruebaPolinomioGrado10Horner() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado10.in");
+		Assert.assertTrue(2050 == p.evaluarHorner(2));
+	}
+	
+	
+	@Test
+	public void pruebaPolinomioGrado100mSucesivas05() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado100.in");
+		Assert.assertTrue( 4.0 == p.evaluarMSucesivas(0.5));
+	}
+	@Test
+	public void pruebaPolinomioGrado100mSucesivas09() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado100.in");
+		Assert.assertTrue(19.99952189482003 == p.evaluarMSucesivas(0.9));
+	}
+	@Test
+	public void pruebaPolinomioGrado100Pow05() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado100.in");
+		Assert.assertTrue( 3.9999999999999996 ==  p.evaluarPow(0.5) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado100Pow09() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado100.in");
+		Assert.assertTrue(19.999521894820035 ==  p.evaluarPow(0.9) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado100Mejorada05() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado100.in");
+		Assert.assertTrue(4.0 ==  p.evaluarMejorada(0.5) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado100Mejorada09() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado100.in");
+		Assert.assertTrue(19.99952189482003 ==  p.evaluarMejorada(0.9) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado100RecursivaPar05() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado100.in");
+		Assert.assertTrue(4.0 ==  p.evaluarRecursivaPar(0.5) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado100RecursivaPar09() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado100.in");
+		Assert.assertTrue(19.99952189482003 ==  p.evaluarRecursivaPar(0.9) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado100Recursiva05() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado100.in");
+		Assert.assertTrue( 4.0 ==  p.evaluarRecursiva(0.5) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado100Recursiva09() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado100.in");
+		Assert.assertTrue(19.99952189482003 ==  p.evaluarRecursiva(0.9) ) ;
+	}
+	
+	@Test
+	public void pruebaPolinomioGrado100Dinamica05() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado100.in");
+		Assert.assertTrue( 4.0 ==  p.evaluarProgDinamica(0.5) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado100Dinamica09() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado100.in");
+		Assert.assertTrue(19.99952189482003 ==  p.evaluarProgDinamica(0.9) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado1000mSucesivas075() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado1000.in");
+		Assert.assertTrue( 8.0 == p.evaluarMSucesivas(0.75));
+	}
+	@Test
+	public void pruebaPolinomioGrado1000mSucesivas09() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado1000.in");
+		Assert.assertTrue(20.000000000000007 == p.evaluarMSucesivas(0.9));
+	}
+	@Test
+	public void pruebaPolinomioGrado1000Pow075() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado1000.in");
+		Assert.assertTrue( 8.0 ==  p.evaluarPow(0.75) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado1000Pow09() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado1000.in");
+		Assert.assertTrue(20.000000000000007 ==  p.evaluarPow(0.9) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado1000Mejorada075() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado1000.in");
+		Assert.assertTrue( 8.0 ==  p.evaluarMejorada(0.75) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado1000Mejorada09() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado1000.in");
+		Assert.assertTrue(20.000000000000007 ==  p.evaluarMejorada(0.9) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado1000RecursivaPar09() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado1000.in");
+		Assert.assertTrue(20.000000000000007 ==  p.evaluarRecursivaPar(0.9) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado1000RecursivaPar075() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado1000.in");
+		Assert.assertTrue(8.0 ==  p.evaluarRecursivaPar(0.75) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado1000Recursiva075() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado1000.in");
+		Assert.assertTrue(8.0 ==  p.evaluarRecursiva(0.75) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado1000Recursiva09() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado1000.in");
+		Assert.assertTrue(20.000000000000007 ==  p.evaluarRecursiva(0.9) ) ;
+	}
+	
+	@Test
+	public void pruebaPolinomioGrado1000Dinamica09() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado1000.in");
+		Assert.assertTrue( 19.999999999999996 ==  p.evaluarProgDinamica(0.9) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado1000Dinamica075() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado1000.in");
+		Assert.assertTrue( 7.999999999999997 ==  p.evaluarProgDinamica(0.75) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado1000Horner() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado1000.in");
+		Assert.assertTrue(19.99999999999999 == p.evaluarHorner(0.9));
+	}	
+	@Test
+	public void pruebaPolinomioGrado2000mSucesivas075() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado2000.in");
+		Assert.assertTrue( 8.0 == p.evaluarMSucesivas(0.75));
+	}
+	@Test
+	public void pruebaPolinomioGrado2000mSucesivas09() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado2000.in");
+		Assert.assertTrue(20.000000000000007 == p.evaluarMSucesivas(0.9));
+	}
+	@Test
+	public void pruebaPolinomioGrado2000Pow075() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado2000.in");
+		Assert.assertTrue( 8.0 ==  p.evaluarPow(0.75) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado2000Pow09() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado2000.in");
+		Assert.assertTrue(20.000000000000007 ==  p.evaluarPow(0.9) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado2000Mejorada075() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado2000.in");
+		Assert.assertTrue( 8.0 ==  p.evaluarMejorada(0.75) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado2000Mejorada09() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado2000.in");
+		Assert.assertTrue(20.000000000000007 ==  p.evaluarMejorada(0.9) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado2000RecursivaPar09() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado2000.in");
+		Assert.assertTrue(20.000000000000007 ==  p.evaluarRecursivaPar(0.9) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado2000RecursivaPar075() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado2000.in");
+		Assert.assertTrue(8.0 ==  p.evaluarRecursivaPar(0.75) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado2000Recursiva075() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado2000.in");
+		Assert.assertTrue(8.0 ==  p.evaluarRecursiva(0.75) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado2000Recursiva09() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado2000.in");
+		Assert.assertTrue(20.000000000000007 ==  p.evaluarRecursiva(0.9) ) ;
+	}
+	
+	@Test
+	public void pruebaPolinomioGrado2000Dinamica09() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado2000.in");
+		Assert.assertTrue( 19.999999999999996 ==  p.evaluarProgDinamica(0.9) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado2000Dinamica075() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado2000.in");
+		Assert.assertTrue( 7.999999999999997 ==  p.evaluarProgDinamica(0.75) ) ;
+	}
+	@Test
+	public void pruebaPolinomioGrado2000Horner() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado2000.in");
+		Assert.assertTrue(19.99999999999999 == p.evaluarHorner(0.9));
+	}	
+	@Test
+	public void pruebaPolinomioGradoAsiTomeLosTiempos12000() throws FileNotFoundException{
+		Polinomio p = new Polinomio("Lote de Pruebas\\IN\\grado12000.in");
+		Calendar tsIni = new GregorianCalendar();
+		// start code     
+		p.evaluarMSucesivas(0.5);
+		// end code
+		Calendar tsFin = new GregorianCalendar();
+		long susesiva = tsFin.getTimeInMillis() - tsIni.getTimeInMillis();
+		
+		Calendar tIni = new GregorianCalendar();
+		// start code     
+		p.evaluarRecursiva(0.5);
+		// end code
+		Calendar tFin = new GregorianCalendar();
+		long recursiva = tFin.getTimeInMillis() - tIni.getTimeInMillis();
+		
+		System.out.println("Susesiva\t--> "+susesiva);
+		System.out.println("Recursiva\t--> "+recursiva);
+		
+		System.out.println("ms <-- \narre fast el java :v");
+	}	
+
+}

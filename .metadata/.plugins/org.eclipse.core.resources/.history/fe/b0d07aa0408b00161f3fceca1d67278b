@@ -1,0 +1,7 @@
+package juego;
+
+public abstract class Casta {
+	public int getAltura() {
+		return this.altura;
+	}	
+}

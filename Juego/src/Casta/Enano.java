@@ -1,0 +1,35 @@
+package Casta;
+
+import Personaje.Personaje;
+
+public class Enano extends Personaje {
+
+	public Enano() {
+		this.altura = 120;
+	}
+
+	@Override
+	protected boolean puedeAtacar() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	protected int calcularPuntosDeAtaque() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int obtenerPuntosDeAtaque() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int obtenerPuntosDeDefensa() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+}

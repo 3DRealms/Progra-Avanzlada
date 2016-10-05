@@ -1,0 +1,10 @@
+package interfaces;
+
+public interface Ubicable {
+	
+	protected int coorX;
+	protected int coorY;
+	
+	public void desplazar(int x,int y);
+}
+	

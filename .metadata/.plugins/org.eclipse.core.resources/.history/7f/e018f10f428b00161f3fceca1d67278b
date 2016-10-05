@@ -1,0 +1,11 @@
+package Casta;
+
+import Personaje.Personaje;
+
+public class Enano extends Personaje {
+
+	public Enano() {
+		this.altura = 120;
+	}
+	
+}

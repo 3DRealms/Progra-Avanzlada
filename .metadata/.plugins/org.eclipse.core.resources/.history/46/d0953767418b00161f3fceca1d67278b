@@ -1,0 +1,13 @@
+package habilidades;
+
+import Casta.Casta;
+import Personaje.Personaje;
+
+public class Engorgio extends Hechizo {
+
+	@Override
+	public void afectar(Casta personaje) {
+		personaje.altura *= 2;
+	}
+
+}

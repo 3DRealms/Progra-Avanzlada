@@ -1,0 +1,20 @@
+package mapa;
+
+public class Zona {
+	protected int idZona;
+	protected int radio;
+	protected String descripcion;
+
+	private void curar() {
+		// TODO Auto-generated method stub
+
+	}
+	private void neutral() {
+		// TODO Auto-generated method stub
+
+	}
+	private void peligro() {
+		// TODO Auto-generated method stub
+
+	}
+}

@@ -6,4 +6,11 @@
 <fullyQualifiedTypeName name="juego.Batallon"/>
 <fullyQualifiedTypeName name="juego.BatallonHumano"/>
 <fullyQualifiedTypeName name="juego.BatallonOrco"/>
+<fullyQualifiedTypeName name="juego.Personaje"/>
+<fullyQualifiedTypeName name="juego.Engorgio"/>
+<fullyQualifiedTypeName name="juego.Mago"/>
+<fullyQualifiedTypeName name="juego.Enano"/>
+<fullyQualifiedTypeName name="Casta.Casta"/>
+<fullyQualifiedTypeName name="Personaje.Personaje"/>
+<fullyQualifiedTypeName name="interfaces.Ubicable"/>
 </qualifiedTypeNameHistroy>

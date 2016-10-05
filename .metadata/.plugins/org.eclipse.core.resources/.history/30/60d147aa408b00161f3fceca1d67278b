@@ -1,0 +1,29 @@
+package juego;
+
+public class Enano extends Casta {
+
+	public Enano() {
+		this.altura = 120;
+	}
+
+	@Override
+	protected boolean puedeAtacar() {
+		return false;
+	}
+
+	@Override
+	protected int calcularPuntosDeAtaque() {
+		return 0;
+	}
+
+	@Override
+	public int obtenerPuntosDeAtaque() {
+		return 0;
+	}
+
+	@Override
+	public int obtenerPuntosDeDefensa() {
+		return 0;
+	}
+	
+}

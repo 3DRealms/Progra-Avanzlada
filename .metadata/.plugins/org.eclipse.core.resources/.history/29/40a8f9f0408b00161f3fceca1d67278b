@@ -1,0 +1,11 @@
+package juego;
+
+import juego.Casta;
+
+public class Enano extends Casta {
+
+	public Enano() {
+		this.altura = 120;
+	}
+	
+}

@@ -1,13 +1,13 @@
 package juegoTest;
 
-import juego.ConAnilloDraupnir;
-import juego.ConEscudoSvalinn;
-import juego.ConEspadaSkofnung;
-import juego.Humano;
-import juego.Personaje;
-
 import org.junit.Assert;
 import org.junit.Test;
+
+import Personaje.Personaje;
+import equipo.ConAnilloDraupnir;
+import equipo.ConEscudoSvalinn;
+import equipo.ConEspadaSkofnung;
+import raza.Humano;
 
  
 

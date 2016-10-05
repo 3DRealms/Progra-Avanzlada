@@ -1,0 +1,9 @@
+package Casta;
+
+public abstract class Casta {
+	protected int altura;
+
+	public int getAltura() {
+		return this.altura;
+	}	
+}

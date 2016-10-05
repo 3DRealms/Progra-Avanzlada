@@ -1,0 +1,12 @@
+package juego;
+
+import juego.Personaje;
+
+public class Engorgio extends Hechizo {
+
+	@Override
+	public void afectar(Personaje personaje) {
+		personaje.altura *= 2;
+	}
+
+}

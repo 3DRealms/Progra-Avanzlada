@@ -1,0 +1,15 @@
+package habilidades;
+
+import Casta.Casta;
+import Personaje.Personaje;
+
+public abstract class Hechizo {
+
+	public abstract void afectar(Personaje personaje);
+
+	public void afectar(Casta personaje) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,8 @@
+package interfaces;
+
+public interface Ubicable {
+	
+	protected int coorX;
+	protected int coorY;
+}
+	

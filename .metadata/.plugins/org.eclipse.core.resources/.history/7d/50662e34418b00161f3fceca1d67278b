@@ -1,0 +1,9 @@
+package habilidades;
+
+import juego.Personaje;
+
+public abstract class Hechizo {
+
+	public abstract void afectar(Personaje personaje);
+
+}

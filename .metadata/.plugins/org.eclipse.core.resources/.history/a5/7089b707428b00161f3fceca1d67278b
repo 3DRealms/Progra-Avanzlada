@@ -1,0 +1,9 @@
+package Casta;
+
+public class Enano extends Casta {
+
+	public Enano() {
+		this.altura = 120;
+	}
+	
+}

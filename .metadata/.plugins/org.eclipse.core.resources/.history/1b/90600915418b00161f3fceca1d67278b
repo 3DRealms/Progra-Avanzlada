@@ -1,0 +1,14 @@
+package juego;
+
+public class Habilidad {
+	protected int idHabilidad;
+	protected int ataqueBasico;
+	protected int costo;
+	protected int nivel;
+	protected String nombre;
+	protected String casta;
+	
+	private void lanzar(Atacable victima) {
+
+	}
+}

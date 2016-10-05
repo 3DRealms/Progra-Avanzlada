@@ -1,0 +1,10 @@
+package juego;
+
+public class ExperienciaRequerida {
+	protected int[] cantidadDeExperienciaPorNivel;
+	
+	private void enQueNivel(int experienciaActual) {
+		
+
+	}
+}
