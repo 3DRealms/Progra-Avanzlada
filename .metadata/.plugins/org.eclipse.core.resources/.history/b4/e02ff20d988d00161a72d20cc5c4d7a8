@@ -1,0 +1,31 @@
+package juegoTest;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import casta.Mago;
+import habilidades.PiroExplosion;
+import personaje.Personaje;
+import raza.Mognatal;
+
+public class HechizosTests {
+	
+	@Test
+	public void quePuedoAgregarHechizos() {
+		Mago gandalf = new Mago();
+		Assert.assertEquals(0, gandalf.getCantidadDeHabilidades());
+		gandalf.agregarHabilidad("piroExplosion", new PiroExplosion());
+		Assert.assertEquals(1, gandalf.getCantidadDeHabilidades());
+	}
+
+	@Test
+	public void queUnPersonajePuedeHechizarPorNombre() {
+		Mago gandalf = new Mago();
+		gandalf.agregarHabilidad("piroExplosion", new PiroExplosion());
+		Personaje gimli = new Mognatal();
+		Assert.assertEquals(120, gimli.getSaludActual());
+		gandalf.lanzarHabilidad("piroExplosion", gimli);
+		Assert.assertEquals(240, gimli.getSaludActual());
+	}
+	
+}

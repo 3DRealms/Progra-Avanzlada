@@ -1,0 +1,31 @@
+package casta;
+
+import java.util.HashMap;
+
+import habilidades.Habilidad;
+import personaje.Personaje;
+
+public class Mago extends Casta {
+
+	public Mago(){
+		habilidades = new HashMap<String, Habilidad>();
+	}
+	public void agregarHabilidad(String conjuro,  Habilidad habilidad) {
+		this.habilidades.put(conjuro, habilidad);
+	}
+
+	public int getCantidadDeHabilidades() {
+		return this.habilidades.size();
+	}
+
+	public void lanzarHabilidad(String conjuro, Personaje personaje) {
+		Habilidad h = this.habilidades.get(conjuro);
+		if(this.get <	h.getCosto())
+		{
+
+		}
+
+		h.afectar(personaje);
+	}
+
+}

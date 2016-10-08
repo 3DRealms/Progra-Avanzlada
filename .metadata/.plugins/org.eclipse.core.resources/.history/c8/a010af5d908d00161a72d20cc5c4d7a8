@@ -1,0 +1,8 @@
+package casta;
+
+import personaje.Personaje;
+
+public abstract class Casta  {
+
+
+}

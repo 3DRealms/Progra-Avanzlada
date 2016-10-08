@@ -1,0 +1,17 @@
+package casta;
+
+import java.util.Map;
+
+import habilidades.Habilidad;
+import personaje.Personaje;
+
+public abstract class Casta  {
+	protected Map<String, Habilidad> habilidades;
+	public void agregarHabilidad(String conjuro,  Habilidad habilidad);
+
+
+	public int getCantidadDeHabilidades();
+	}
+
+	public void lanzarHabilidad(String conjuro, Personaje personaje);
+}

@@ -1,7 +1,7 @@
 package equipo;
 
-import Personaje.Personaje;
-import Personaje.PersonajeEquipado;
+import personaje.Personaje;
+import personaje.PersonajeEquipado;
 
 public class ConAnilloDraupnir extends PersonajeEquipado {
 

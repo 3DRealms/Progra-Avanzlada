@@ -1,6 +1,6 @@
 package raza;
 
-import Personaje.Personaje;
+import personaje.Personaje;
 
 public class Orco extends Personaje {
 

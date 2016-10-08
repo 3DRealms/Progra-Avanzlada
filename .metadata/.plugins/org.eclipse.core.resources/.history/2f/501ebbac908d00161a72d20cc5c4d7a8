@@ -1,0 +1,12 @@
+package casta;
+
+import java.util.Map;
+
+import habilidades.Habilidad;
+
+public abstract class Casta  {
+	
+	protected Map<String, Habilidad> habilidades;
+
+
+}

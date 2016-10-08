@@ -1,0 +1,12 @@
+package habilidades;
+
+import personaje.Personaje;
+
+public class PiroExplicion extends Habilidad {
+
+	@Override
+	public void afectar(Personaje personaje) {
+		personaje.setAltura(personaje.getAltura()*2);
+	}
+
+}

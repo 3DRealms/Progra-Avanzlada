@@ -1,0 +1,12 @@
+package habilidades;
+
+import oersonaje.Personaje;
+
+public class Engorgio extends Hechizo {
+
+	@Override
+	public void afectar(Personaje personaje) {
+		personaje.setAltura(personaje.getAltura()*2);
+	}
+
+}

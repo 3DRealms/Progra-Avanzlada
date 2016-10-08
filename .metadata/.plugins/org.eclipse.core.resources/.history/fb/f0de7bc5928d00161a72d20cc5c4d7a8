@@ -1,0 +1,72 @@
+package personaje;
+
+import casta.Casta;
+import habilidades.Habilidad;
+import interfaces.Atacable;
+import interfaces.Ubicable;
+
+public abstract class Personaje implements Atacable {
+
+	protected int altura;
+	protected int idPersonaje;
+	protected int ataque;
+	protected Casta casta;
+	protected int destreza;
+	protected int energia;
+	protected int defensa;
+	protected int experiencia;
+	protected int fuerza;  
+	protected int intelecto;
+	protected int nivel;
+	protected String nombre;
+	protected int saludBase;
+	protected int saludActual;
+	protected int vitalidad;
+	
+	public int getAltura() {
+		return this.altura;
+	}	
+	
+	public void setAltura(int altura) {
+		this.altura = altura;
+	}
+
+	public final void atacar(Atacable atacado) {
+		if (puedeAtacar()) {
+			int puntosDeAtaque = calcularPuntosDeAtaque();
+			atacado.serAtacado(puntosDeAtaque);
+			energia -= puntosDeAtaque;
+			despuesDeAtacar();
+		}
+	}
+
+	protected void despuesDeAtacar() { }
+
+	protected abstract boolean puedeAtacar();
+	protected abstract int calcularPuntosDeAtaque();
+	public abstract int obtenerPuntosDeAtaque();
+	public abstract int obtenerPuntosDeDefensa();
+
+	public void serAtacado(int danio) {
+		this.saludBase -= danio;
+	}
+	public void serCurado() {
+		this.saludBase = 100;
+	}
+
+	public void serEnergizado() {
+		this.energia = 100;
+	}
+	@Override
+	public void morir() {
+	}
+	public void lanzarHabilidad(Habilidad obj){
+		
+	}
+	public boolean estaMuerto() {
+		return saludBase <= 0;
+	}
+
+
+}
+

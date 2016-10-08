@@ -13,4 +13,7 @@
 <fullyQualifiedTypeName name="Casta.Casta"/>
 <fullyQualifiedTypeName name="Personaje.Personaje"/>
 <fullyQualifiedTypeName name="interfaces.Ubicable"/>
+<fullyQualifiedTypeName name="personaje.Personaje"/>
+<fullyQualifiedTypeName name="habilidades.Habilidad"/>
+<fullyQualifiedTypeName name="casta.Mago"/>
 </qualifiedTypeNameHistroy>

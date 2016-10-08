@@ -1,9 +1,9 @@
 package juegoTest;
 import org.junit.Test;
 
-import Batallon.Batallon;
-import Batallon.BatallonHumano;
-import Batallon.BatallonOrco;
+import batallon.Batallon;
+import batallon.BatallonHumano;
+import batallon.BatallonOrco;
 import junit.framework.Assert;
 
 
@@ -18,7 +18,7 @@ public class BatallonTest {
 		System.out.println("¡Empieza la batalla!");
 		
 		while( !fin ){
-			System.out.println("Round "+i);
+			System.out.println("Round "+i+".");
 			
 			b_Humano.atacar(b_Orco);
 			if( b_Orco.isEmpty() ){
@@ -33,6 +33,6 @@ public class BatallonTest {
 			}
 			i++;
 		}
-		System.out.println("El ganador es:"+ganador);
+		System.out.println("El ganador es: "+ganador);
 	}
 }

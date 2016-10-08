@@ -3,10 +3,10 @@ package juegoTest;
 import org.junit.Assert;
 import org.junit.Test;
 
-import Personaje.Personaje;
 import equipo.ConAnilloDraupnir;
 import equipo.ConEscudoSvalinn;
 import equipo.ConEspadaSkofnung;
+import personaje.Personaje;
 import raza.Humano;
 
  

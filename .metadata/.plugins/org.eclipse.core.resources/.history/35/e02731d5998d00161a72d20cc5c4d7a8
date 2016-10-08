@@ -1,0 +1,15 @@
+package habilidades;
+
+import personaje.Personaje;
+
+public class PiroExplosion extends Habilidad {
+	
+	public Habilidad(){
+		
+	}
+	@Override
+	public void afectar(Personaje victima) {
+		victima.serAtacado(50);
+	}
+
+}

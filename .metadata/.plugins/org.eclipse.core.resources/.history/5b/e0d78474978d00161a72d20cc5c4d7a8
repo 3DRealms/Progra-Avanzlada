@@ -1,0 +1,9 @@
+package juegoTest;
+/**
+ * 
+ * 	Se entiende por estado a todo atributo que afecta de manera positiva a mi personaje.
+ * 	EJ: vitalidad, fuerza, intelecto. 
+ * */
+public class SubirEstadosDelPersonajeTest {
+
+}

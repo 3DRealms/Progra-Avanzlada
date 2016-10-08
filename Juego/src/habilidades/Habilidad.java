@@ -1,17 +1,12 @@
 package habilidades;
 
-import interfaces.Atacable;
+import personaje.Personaje;
 
-public class Habilidad {
-	protected int idHabilidad;
-	protected int ataqueBasico;
+public abstract class Habilidad {
 	protected int costo;
-	protected int nivel;
-	protected String nombre;
-	protected String casta;
-	
-	@SuppressWarnings("unused") // NO termine >:(
-	private void lanzar(Atacable victima) {
-
+	protected int ataqueBasico;
+	public abstract void afectar(Personaje personaje);
+	public int getCosto() {
+		return costo;
 	}
 }

@@ -1,0 +1,6 @@
+package casta;
+
+public abstract class Casta extends personaje {
+
+
+}

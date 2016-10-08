@@ -19,3 +19,17 @@
 1475702347398	Move compilation unit
 1475704437222	Move compilation unit
 1475710333798	Rename package 'juego'
+1475782802061	Delete element
+1475782809983	Rename package 'Personaje'
+1475782815509	Rename package 'Casta'
+1475782818594	Rename package 'Batallon'
+1475782945839	Delete element
+1475786834423	Move compilation unit
+1475786871487	Rename package 'oersonaje'
+1475956183616	Delete element
+1475956390427	Rename type 'Engorgio'
+1475956405803	Rename type 'PiroExplicion'
+1475957355817	Rename type 'Enano'
+1475957383074	Rename type 'Vampiro'
+1475958847341	Rename local variable 'gimli'
+1475959267797	Rename method 'setVitalidad'

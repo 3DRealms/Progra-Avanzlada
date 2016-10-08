@@ -1,0 +1,8 @@
+package habilidades;
+
+import personaje.Personaje;
+
+public abstract class Habilidad {
+	protected abstract int costo;
+	public abstract void afectar(Personaje personaje);
+}

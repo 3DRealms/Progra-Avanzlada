@@ -3,37 +3,31 @@ package juegoTest;
 import org.junit.Assert;
 import org.junit.Test;
 
-import Casta.Enano;
-import Casta.Mago;
-import Personaje.Personaje;
-import habilidades.Engorgio;
+import habilidades.PiroExplosion;
+import personaje.Personaje;
+import raza.Mognatal;
 
 public class HechizosTests {
 
 	@Test
-	public void quePuedoHechizar() {
-		Personaje gimli = new Enano();
-		Assert.assertEquals(120, gimli.getAltura());
-		new Engorgio().afectar(gimli);
-		Assert.assertEquals(240, gimli.getAltura());
-	}
-	
-	@Test
 	public void quePuedoAgregarHechizos() {
-		Mago gandalf = new Mago();
-		Assert.assertEquals(0, gandalf.getCantidadDeHechizos());
-		gandalf.agregarHechizo("engorgio", new Engorgio());
-		Assert.assertEquals(1, gandalf.getCantidadDeHechizos());
+		Mognatal gandalf = new Mognatal();
+		gandalf.setCastaMago();
+		Assert.assertEquals(0, gandalf.getCasta().getCantidadDeHabilidades());
+		gandalf.getCasta().agregarHabilidad("piroExplosion", new PiroExplosion());
+		Assert.assertEquals(1, gandalf.getCasta().getCantidadDeHabilidades());
 	}
 
 	@Test
 	public void queUnPersonajePuedeHechizarPorNombre() {
-		Mago gandalf = new Mago();
-		gandalf.agregarHechizo("engorgio", new Engorgio());
-		Personaje gimli = new Enano();
-		Assert.assertEquals(120, gimli.getAltura());
-		gandalf.hechizar("engorgio", gimli);
-		Assert.assertEquals(240, gimli.getAltura());
+		Mognatal gandalf = new Mognatal();
+		gandalf.setCastaMago();
+		gandalf.getCasta().agregarHabilidad("piroExplosion", new PiroExplosion());
+		Personaje gimli = new Mognatal();
+		Assert.assertEquals(120, gimli.getSaludActual());
+		gandalf.getCasta().lanzarHabilidad("piroExplosion", gimli);
+		// Piro Explosion quita 20 puntos de vida. 
+		Assert.assertEquals(100, gimli.getSaludActual());
 	}
-	
+
 }
